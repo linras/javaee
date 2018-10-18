@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+a {color:teal;}
+</style>
+<body>
+
+
+
+<!-- Main content:  -->
+<div class="main" style="margin-left:250px">
+
+  <div class="row">
+    <div class="container">
+      <h1><p>Go to: <a href=http://localhost:8080/servletjspdemo/about>ABOUT</a></p></h1>
+    </div>
+  </div>
+
+    <div class="container">
+      <h1>
+      <p> Go to: <a href=http://localhost:8080/servletjspdemo/date>DATE</a></p></h1>
+      
+    </div>
+
+  
+</body>
+</html>
+

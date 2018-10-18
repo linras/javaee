@@ -2,4 +2,4 @@
 
 Antonina Formela
 
-Pierwszy projekt w maven
+Pierwszy projekt w maven.

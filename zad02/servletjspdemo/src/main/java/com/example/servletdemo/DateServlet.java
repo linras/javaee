@@ -20,8 +20,16 @@ public class DateServlet extends HttpServlet{
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
-
-		out.println("<html><body><h1>Dzisiejsza data: "+dateFormat.format(date)+"</h1></body></html>"); //2016/11/16 12:08:43
+		ReadFile file = new ReadFile("date.txt");
+		String s = file.read();
+		s = s+dateFormat.format(date)+"</p></h1>\r\n" + 
+				"    </div>\r\n" + 
+				"  \r\n" + 
+				"</body>\r\n" + 
+				"</html>";
+		out.print(s);
+		
+		//out.println("<html><body><h1>Dzisiejsza data: "+dateFormat.format(date)+"</h1></body></html>"); //2016/11/16 12:08:43
 		//out.print("Hello");
 	}
 }
