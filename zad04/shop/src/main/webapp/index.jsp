@@ -9,8 +9,8 @@
     </head>
     <body>
         <h2>Mini shop of birds</h2>
-        <p><a href="addBird">Add bird to the shop</a></p>
-        <p><a href="shopping">Shopping</a></p>
-        <p><a href="trolley">Your birds</a></p>
+        <p><a href="addBird.jsp">Add bird to the shop</a></p>
+        <p><a href="shopping.jsp">Shopping</a></p>
+        <p><a href="trolley.jsp">Your birds</a></p>
     </body>
 </html>
