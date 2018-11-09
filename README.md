@@ -2,4 +2,4 @@
 
 Antonina Formela
 
-Pierwszy projekt w maven.
+Zadania wykonywane w ramach przedmiotu: technologie Java Enterprise.
