@@ -9,7 +9,29 @@ public class StorageService {
 	
 	private List<Bird> db = new ArrayList<Bird>();
 	private List<Bird> trolley = new ArrayList<Bird>();
+	boolean first =false;
+	boolean second =false;
+	boolean third =false;
 	
+	public boolean getZgody(String s) {
+		if(s.equals("first"))
+			return first;
+		if(s.equals("second"))
+			return second;
+		if(s.equals("third"))
+			return third;
+		return false;
+	}
+
+	public void setZgody(String s) {
+		if(s.equals("first"))
+			first = true;
+		if(s.equals("second"))
+			second=true;
+		if(s.equals("third"))
+			third=true;
+	}
+
 	public void add(Bird bird){
 		Bird newBird = new Bird(bird.getName() ,  bird.getDateOfBirth(),  bird.isFemale(), bird.getPrice(), bird.getCountOfColors());
 		db.add(newBird);
