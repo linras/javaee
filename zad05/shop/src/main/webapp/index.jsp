@@ -14,7 +14,7 @@
     {
     %>
     <script>
-    window.open('rodo.jsp','My Window','height= 480 px,width =640 ,')
+    window.location.href = "rodo.jsp"
     </script>
     <% } %>
         <h2>Mini shop of birds</h2>
@@ -25,6 +25,9 @@
 	        <p><a href="addBird.jsp">Add bird to the shop</a></p>
 	        <p><a href="shopping.jsp">Shopping</a></p>
 	        <p><a href="trolley.jsp">Your birds</a></p>
+	        <p><a href="addSurvey.jsp">Add survey</a></p>
+	        <p><a href="seeAllSurveys.jsp">See all surveys</a></p>
+	        <p><a href="yourSurvey.jsp">Your surveys</a></p>
      <% } 
     else {
     	out.print("First you must agree!");

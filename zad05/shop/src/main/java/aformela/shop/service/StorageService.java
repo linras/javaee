@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import aformela.shop.domain.Bird;
+import aformela.shop.domain.Survey;
 
 public class StorageService {
 	
 	private List<Bird> db = new ArrayList<Bird>();
 	private List<Bird> trolley = new ArrayList<Bird>();
+	private List<Survey> surveys = new ArrayList<Survey>();
+	//private List<Survey> sessSur = new ArrayList<Survey>();
 	boolean first =false;
 	boolean second =false;
 	boolean third =false;
@@ -42,6 +45,17 @@ public class StorageService {
 		trolley.add(newBird);
 	}
 	
+	public void addSur(Survey sur) {
+		Survey newSur = new Survey(sur.getPocz(), sur.getKon(), sur.getCzestotliwosc(), sur.getUwagi());
+		surveys.add(newSur);
+		//surveys.add(sur);
+	}
+	
+	/*public void addYourSur(Survey sur) {
+		Survey newSur = new Survey(sur.getPocz(), sur.getKon(), sur.getCzestotliwosc(), sur.getUwagi());
+		sessSur.add(newSur);
+	}*/
+	
 	public void addExamples(){
 		Bird newBird = new Bird("Staszek" ,  "2015-11-11",  false, 12.5, 4);
 		db.add(newBird);
@@ -51,6 +65,16 @@ public class StorageService {
 		db.add(newBird);
 	}
 	
+	public void addSomeSurveys(){
+		String[] tab = {"good", "very good", "not bad"};
+		Survey s = new Survey("2018-12-12" ,  "2015-11-11",  "daily" );
+		surveys.add(s);
+		s = new Survey("2018-12-12" ,  "2015-11-11",  "every week" , tab);
+		surveys.add(s);
+		s = new Survey("2018-12-12" ,  "2015-11-11",  "daily", tab );
+		surveys.add(s);
+	}
+	
 	public List<Bird> getAllBirds(){
 		return db;
 	}
@@ -58,6 +82,14 @@ public class StorageService {
 	public List<Bird> getTrolley(){
 		return trolley;
 	}
+	
+	public List<Survey> getSurveys(){
+		return surveys;
+	}
+	
+	/*public List<Survey> getYourSurveys(){
+		return sessSur;
+	}*/
 
 	public void addBird(Bird bird) {
 		// TODO Auto-generated method stub

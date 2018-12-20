@@ -25,8 +25,12 @@
 			//out.println(sessionStorage.getZgody(nr));
 		}
 }
-	if(sessionStorage.getZgody("first")==true && sessionStorage.getZgody("second")==true)
-		out.print("Now you can use the site!");
+	if(sessionStorage.getZgody("first")==true && sessionStorage.getZgody("second")==true){ %>
+		<script>
+	    window.location.href = "index.jsp"
+	    </script>
+<%
+	}
 %>
 </body>
 </html>
