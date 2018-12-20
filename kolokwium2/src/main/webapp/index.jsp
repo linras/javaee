@@ -25,6 +25,7 @@
     		<p><a href="buttonShopping.jsp">Add button from all buttons (zakupy)</a></p>
 	        <p><a href="addButton.jsp">Add your button (formularz)</a></p>
 	        <p><a href="seeAllButtons.jsp">See all buttons</a></p>
+	        <p><a href="seeAll">See all buttons</a></p>
 	        <p><a href="yourButtons.jsp">Your buttons (koszyk)</a></p>
 <!-- 	        <p><a href="addBird.jsp">Add bird to the shop</a></p> -->
 <!-- 	        <p><a href="shopping.jsp">Shopping</a></p> -->
