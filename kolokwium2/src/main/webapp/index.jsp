@@ -22,6 +22,10 @@
     if(sessionStorage.getZgody("first") == true && sessionStorage.getZgody("second") == true)
     	{
     %>
+    		
+	        <p><a href="addButton.jsp">Add button</a></p>
+	        <p><a href="seeAllButtons.jsp">See all buttons</a></p>
+	        <p><a href="yourButtons.jsp">Your buttons</a></p>
 	        <p><a href="addBird.jsp">Add bird to the shop</a></p>
 	        <p><a href="shopping.jsp">Shopping</a></p>
 	        <p><a href="trolley.jsp">Your birds</a></p>

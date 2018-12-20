@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import aformela.shop.domain.Bird;
+import aformela.shop.domain.Button;
 import aformela.shop.domain.Survey;
 
 public class StorageService {
@@ -11,6 +12,7 @@ public class StorageService {
 	private List<Bird> db = new ArrayList<Bird>();
 	private List<Bird> trolley = new ArrayList<Bird>();
 	private List<Survey> surveys = new ArrayList<Survey>();
+	private List<Button> buttons = new ArrayList<Button>();
 	//private List<Survey> sessSur = new ArrayList<Survey>();
 	boolean first =false;
 	boolean second =false;
@@ -51,6 +53,11 @@ public class StorageService {
 		//surveys.add(sur);
 	}
 	
+	public void addButton(Button button){
+		Button newB = new Button(button.getNazwa(), button.getPrice(), button.getData(), button.getDziurki(), button.getUwagi());
+		buttons.add(newB);
+	}
+	
 	/*public void addYourSur(Survey sur) {
 		Survey newSur = new Survey(sur.getPocz(), sur.getKon(), sur.getCzestotliwosc(), sur.getUwagi());
 		sessSur.add(newSur);
@@ -75,6 +82,16 @@ public class StorageService {
 		surveys.add(s);
 	}
 	
+	public void addSomeButtons(){
+		String[] tab = {"good", "very good", "not bad"};
+		Button b = new Button("Guzik1", 23.50, "2018-12-12" ,"3" );
+		buttons.add(b);
+		b = new Button("Guzik2", 23.50, "2018-12-12" ,"3" , tab);
+		buttons.add(b);
+		b = new Button("Guzik3", 23.50, "2018-12-12" ,"3" , tab);
+		buttons.add(b);
+	}
+	
 	public List<Bird> getAllBirds(){
 		return db;
 	}
@@ -85,6 +102,10 @@ public class StorageService {
 	
 	public List<Survey> getSurveys(){
 		return surveys;
+	}
+	
+	public List<Button> getButtons(){
+		return buttons;
 	}
 	
 	/*public List<Survey> getYourSurveys(){

@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Button {
 	private String nazwa;
+	private double price;
 	private String data;
 	private String dziurki;
 	//private List<String> uwagi = new ArrayList<String>();
@@ -14,22 +15,32 @@ public class Button {
 		super();
 	}
 
-	public Button(String nazwa, String data, String dziurki) {
+	public Button(String nazwa, double price, String data, String dziurki) {
 		super();
 		this.nazwa = nazwa;
 		this.data = data;
 		this.dziurki = dziurki;
+		this.price = price;
 	}
 
-	public Button(String nazwa, String data, String dziurki, String[] uwagi) {
+	public Button(String nazwa, double price, String data, String dziurki, String[] uwagi) {
 		super();
 		this.nazwa = nazwa;
 		this.data = data;
 		this.dziurki = dziurki;
 		this.uwagi = uwagi;
+		this.price = price;
 	}
 
 
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
 
 	@Override
 	public String toString() {
