@@ -1,5 +1,6 @@
 package aformela.shop.service;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class StorageService {
 		//surveys.add(sur);
 	}
 	
-	public void addButton(Button button){
+	public void addButton(Button button) throws ParseException{
 		Button newB = new Button(button.getNazwa(), button.getPrice(), button.getData(), button.getDziurki(), button.getUwagi());
 		buttons.add(newB);
 	}
@@ -82,7 +83,7 @@ public class StorageService {
 		surveys.add(s);
 	}
 	
-	public void addSomeButtons(){
+	public void addSomeButtons() throws ParseException{
 		String[] tab = {"good", "very good", "not bad"};
 		Button b = new Button("Guzik1", 23.50, "2018-12-12" ,"3" );
 		buttons.add(b);

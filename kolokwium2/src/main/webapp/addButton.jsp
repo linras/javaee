@@ -16,7 +16,7 @@
 
   Name :<input type="text" name="nazwa" value="${button.nazwa}" /><br />
   Price :<input type="text" name="price" value="${button.price}" /><br />
-  Date (yyyy-mm-dd) :	<input type="text" name="data" value="${button.data}" /><br />
+  Date (yyyy-mm-dd) :	<input type="text" name="data" value="" /><br />
   Dziurki :<br />
   
   			<input type="radio" name="dziurki" value="dwie"  />2<br />
