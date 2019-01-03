@@ -12,17 +12,30 @@ import com.example.restwsdemo.domain.Bird;
 public class BirdManager {
 	
 	private List<Bird> db = Collections.synchronizedList(new ArrayList<>());
+	public static int id =1;
 
 	public void addBird(Bird bird) {
+		bird.setId(id++);
 		db.add(bird);
 	}
 
-	public void deletePerson(Bird bird){
+	public void deleteBird(Bird bird){
 		db.remove(bird);
  	}
 	
+	public void deleteBird(Integer id){
+		for(Bird b : db) {
+			if(id.intValue()==b.getId())
+				db.remove(b);
+		}
+ 	}
+	
 	public Bird getBird(Integer id) {
-		return new Bird("Piszczel");
+		for(Bird b : db) {
+			if(id.intValue()==b.getId())
+				return b;
+		}
+		return null;
 	}
 	
 	public List<Bird> getAllBirds(){

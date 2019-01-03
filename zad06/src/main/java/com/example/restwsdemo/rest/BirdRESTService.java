@@ -17,31 +17,31 @@ import javax.ws.rs.core.Response;
 import com.example.restwsdemo.domain.Bird;
 import com.example.restwsdemo.service.BirdManager;
 
-@Path("person")
+@Path("bird")
 @Stateless
 public class BirdRESTService {
 
 	@Inject
-	private BirdManager pm;
+	private BirdManager bm;
 
 	@GET
-	@Path("/{personId}")
+	@Path("/{birdId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Bird getPerson(@PathParam("personId") Integer id) {
-		Bird p = pm.getBird(id);
-		return p;
+	public Bird getBird(@PathParam("birdId") Integer id) {
+		Bird b = bm.getBird(id);
+		return b;
 	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Bird> getPersons() {
-		return pm.getAllBirds();
+	public List<Bird> getBirds() {
+		return bm.getAllBirds();
 	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addPerson(Bird bird) {
-		pm.addBird(bird);
+	public Response addBird(Bird bird) {
+		bm.addBird(bird);
 
 		return Response.status(201).entity("Bird").build();
 	}
@@ -50,12 +50,20 @@ public class BirdRESTService {
 	@Path("/test")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String test() {
-		return "REST API /person is running today!";
+		return "REST API /bird is running today!";
 	}
 
 	@DELETE
-	public Response clearPersons() {
-		pm.deleteAllBirds();
+	public Response clearBirds() {
+		bm.deleteAllBirds();
+		return Response.status(200).build();
+	}
+	
+	@DELETE
+	@Path("/{birdId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response deleteBird(@PathParam("birdId") Integer id) {
+		bm.deleteBird(id);
 		return Response.status(200).build();
 	}
 

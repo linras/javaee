@@ -10,13 +10,13 @@ public class Bird {
 	private double price;
 	private String  dateOfBirth;
 	private int countOfColors;
+	private int id;
 	
 	
 	public Bird() {
 		super();
 	}
 
-	private int id; 
 	public Bird(String name, String dateOfBirth, boolean isFemale, double weight, int countOfColors) {
 		super();
 		this.name = name;
@@ -82,6 +82,7 @@ public class Bird {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		//result = prime * result + countOfColors;
 		//result = prime * result + price;
 		return result;
 	}
