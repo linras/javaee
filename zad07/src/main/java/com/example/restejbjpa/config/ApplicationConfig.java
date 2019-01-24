@@ -1,4 +1,4 @@
-package com.example.restwsdemo.config;
+package com.example.restejbjpa.config;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

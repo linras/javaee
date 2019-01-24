@@ -1,22 +1,48 @@
-package com.example.restwsdemo.domain;
+package com.example.restejbjpa.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
+@Entity
+@NamedQueries({ 
+	@NamedQuery(name = "bird.all", query = "Select b from Bird b"),
+	@NamedQuery(name = "bird.delete.all", query = "Delete from Bird "),
+	//@NamedQuery(name = "bird.deleteId", query = "Delete b from Bird b where b.id = :id "),
+	@NamedQuery(name = "bird.findByCountOfColors", query = "Select b from Bird b where b.countOfColors = :countOfColors")//,
+//	@NamedQuery(name = "birdOwner.findByAthorFirstName",
+//	query = "Select a.firstName, a.lastName, b.title, b.yop from Book b JOIN b.authors a where a.firstName = :name")
+	})
 @XmlRootElement
 public class Bird {
 
+	private Long id;
 	private String name;
 	private boolean female;
 	private double price;
 	private String  dateOfBirth;
 	private int countOfColors;
+	private List<Toy> toys = new ArrayList<Toy>();
+    private List<Owner> owners = new ArrayList<Owner>();
+    private Tail tail;
 	
 	
 	public Bird() {
 		super();
 	}
 
-	private int id; 
 	public Bird(String name, String dateOfBirth, boolean isFemale, double weight, int countOfColors) {
 		super();
 		this.name = name;
@@ -26,7 +52,7 @@ public class Bird {
 		this.countOfColors = countOfColors;
 	}
 
-	public Bird(int id, String name, String dateOfBirth, boolean isFemale, double weight, int countOfColors) {
+	public Bird(Long id, String name, String dateOfBirth, boolean isFemale, double weight, int countOfColors) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -40,6 +66,14 @@ public class Bird {
 		this.name = name;
 	}
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
@@ -64,12 +98,7 @@ public class Bird {
 	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public int getCountOfColors() {
 		return countOfColors;
 	}
@@ -77,6 +106,35 @@ public class Bird {
 	public void setCountOfColors(int countOfColors) {
 		this.countOfColors = countOfColors;
 	}
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public List<Toy> getToys() {
+        return toys;
+    }
+
+    public void setToys(List<Toy> toys) {
+        this.toys = toys;
+    }
+	
+    @OneToOne(fetch = FetchType.EAGER)
+    public Tail getTail() {
+        return tail;
+    }
+    
+    public void setTail(Tail tail) {
+        this.tail = tail;
+    }
+    
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	public List<Owner> getOwners() {
+		return owners;
+	}
+    
+    public void setOwners(List<Owner> owners) {
+		this.owners = owners;
+	}
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
